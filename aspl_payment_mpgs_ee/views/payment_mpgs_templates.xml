@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data noupdate="0">
+
+		<template id="assets_frontend_mpgs" inherit_id="website.assets_frontend" name="Website Event Track Assets">
+			<xpath expr="." position="inside">
+				<script type="text/javascript"
+                        src="https://ap-gateway.mastercard.com/checkout/version/58/checkout.js"/>
+<!--				<script	src="https://na-gateway.mastercard.com/checkout/version/57/checkout.js"-->
+<!--						   data-complete="completeCallback"-->
+<!--						   data-error="errorCallback"-->
+<!--						   data-cancel="cancelCallback"/>-->
+			</xpath>
+		</template>
+		<template id="mpgs_acquirer_button">
+			<input type="hidden" name="key" t-att-value='key' />
+            <input type="hidden" name="txnid" t-att-value='txnid' />
+            <input type="hidden" name="reference" t-att-value='reference'/>
+            <input type="hidden" name="amount" t-att-value='amount' />
+            <input type="hidden" name="productinfo" t-att-value='productinfo' />
+            <input type="hidden" name="firstname" t-att-value='firstname' />
+            <input type="hidden" name="email" t-att-value='email' />
+            <input type="hidden" name="phone" t-att-value='phone'/>
+            <input type="hidden" name="service_provider" t-att-value='service_provider' />
+            <input type="hidden" name="surl" t-att-value='surl' />
+            <input type="hidden" name="hash" t-att-value='hash' />
+             <input type='hidden' name='currency' t-att-value='currency'/>
+            <input id="acquirer_mpgs" type='hidden' name="acquirer" t-att-value="acquirer.id"/>
+<!--			<script type="text/javascript">-->
+<!--				function completeCallback(resultIndicator, sessionVersion) {-->
+<!--					alert('Call back')-->
+<!--					console.log("\n \ncompleteCallback" )-->
+<!--					window.location.pathname = '/shop/payment/validate'-->
+
+<!--				}-->
+<!--				function cancelCallback() {-->
+<!--					alert('Cancle')-->
+<!--						console.log("\n \ncancel" )-->
+<!--          				location.reload();-->
+<!--          		}-->
+<!--				function errorCallback(error) {-->
+<!--					alert('Error')-->
+<!--					console.log("error",JSON.stringify(error));-->
+<!--				}-->
+<!--			</script>-->
+			<script type="text/javascript" src="/aspl_payment_mpgs_ee/static/src/js/mpgs_checkout.js" />
+		</template>
+
+	</data>
+</odoo>

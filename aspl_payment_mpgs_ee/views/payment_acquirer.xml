@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="MPGS_Payment_acquirer_id_new" model="ir.ui.view">
+            <field name="name">acquirer.mastercard.mpgs</field>
+            <field name="model">payment.acquirer</field>
+            <field name="inherit_id" ref="payment.acquirer_form" />
+            <field name="arch" type="xml">
+               <xpath expr='//group[@name="acquirer"]' position='after'>
+                   <group>
+                       <field name="merchant_id"/>
+                       <field name="mpgs_secret_key" password="True"/>
+                       <field name="merchant_name" />
+                       <field name="operation" widget="radio"/>
+                       <field name="address1" />
+                       <field name="address2" />
+                   </group>
+               </xpath>
+            </field>
+        </record>
+       </data>
+ </odoo>
